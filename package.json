@@ -11,6 +11,7 @@
         "test:watch": "vitest:watch",
         "preview": "vite preview",
         "format": "prettier --write \"src/**/*.{ts,tsx,css,scss,json}\" \"index.html\"",
+        "format:check": "prettier --check \"src/**/*.{ts,tsx,css,scss,json}\" \"index.html\"",
         "prepare": "husky install",
         "release:patch": "standard-version -r patch",
         "release:minor": "standard-version -r minor",
