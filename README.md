@@ -9,16 +9,17 @@
 - [x] standard-version
 - [x] eslint
 - [x] prettier
-- [ ] cypress
+- [x] cypress
 - [x] vitest
 - [x] testing-library/react
 - [x] router
 - [ ] react-query
 - [ ] redux? recoil?
 - [x] tailwind
-- [ ] daisy ui
+- [x] daisy ui
 - [ ] react-hook-form/formik
 - [ ] react-use
 - [ ] i18n?
 - [ ] layout system?
 - [ ] react-helmet
+- [ ] github actions (lint and test on pr)
