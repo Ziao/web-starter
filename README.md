@@ -23,3 +23,4 @@
 - [ ] layout system?
 - [ ] react-helmet
 - [ ] github actions (lint and test on pr)
+- [ ] Dockerfile with nginx or something
