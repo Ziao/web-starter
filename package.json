@@ -19,7 +19,8 @@
     },
     "prettier": {
         "printWidth": 120,
-        "tabWidth": 4
+        "tabWidth": 4,
+        "htmlWhitespaceSensitivity": "ignore"
     },
     "eslintConfig": {
         "env": {
@@ -53,6 +54,7 @@
     "dependencies": {
         "@heroicons/react": "^2.0.18",
         "classnames": "^2.3.2",
+        "daisyui": "^2.51.6",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.11.1"

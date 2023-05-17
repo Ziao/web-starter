@@ -5,7 +5,7 @@ import { router } from "./lib/router.tsx";
 interface AppProps {}
 export const App: FC<AppProps> = ({}) => {
     return (
-        <div>
+        <div className="min-h-screen flex justify-center items-center">
             <RouterProvider router={router} />
         </div>
     );
