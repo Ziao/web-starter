@@ -1,12 +1,17 @@
 import { FC, useState } from "react";
+import { useCatFactQuery } from "../../lib/queries/useCatFactQuery.ts";
 
 interface HomeProps {}
 export const Home: FC<HomeProps> = () => {
     const [counter, setCounter] = useState(0);
+
+    const { data: fact, isLoading } = useCatFactQuery();
+
     return (
         <main className="card shadow-2xl shadow-sky-400 bg-white w-96">
             <div className="card-body">
                 <h2 className="card-title">Home</h2>
+                <p>Random cat fact: {isLoading ? "..." : fact}</p>
                 <p>
                     Counter: <span data-cy="home-counter">{counter}</span>
                 </p>
