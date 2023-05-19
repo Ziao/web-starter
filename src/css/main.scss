@@ -5,5 +5,11 @@
 @import "components";
 
 body {
-    @apply bg-gradient-to-r from-sky-400 to-cyan-300;
+    @apply bg-gray-200;
+}
+
+#root {
+    // Probably worth keeping
+    @apply min-h-screen;
+    @apply flex flex-col items-stretch;
 }
