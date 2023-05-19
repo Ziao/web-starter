@@ -1,4 +1,5 @@
 import { FC, useState } from "react";
+import { useTitle } from "react-use";
 import { useCatFactQuery } from "../../lib/queries/useCatFactQuery.ts";
 
 interface HomeProps {}
@@ -6,6 +7,7 @@ export const Home: FC<HomeProps> = () => {
     const [counter, setCounter] = useState(0);
 
     const { data: fact, isLoading } = useCatFactQuery();
+    useTitle("Home");
 
     return (
         <main className="card shadow-2xl shadow-sky-400 bg-white w-96">
