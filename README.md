@@ -13,12 +13,13 @@
 - [x] vitest
 - [x] testing-library/react
 - [x] router
-- [ ] react-query
+- [x] react-query
+- [x] axios / env
 - [ ] redux? recoil?
 - [x] tailwind
 - [x] daisy ui
 - [ ] react-hook-form/formik
-- [ ] react-use
+- [x] react-use (https://streamich.github.io/react-use/)
 - [ ] i18n?
 - [ ] layout system?
 - [ ] react-helmet
