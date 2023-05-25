@@ -3,6 +3,7 @@ export default {
     content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
     // eslint-disable-next-line no-undef
     plugins: [require("daisyui")],
+    important: true,
     theme: {
         container: {
             center: true,
