@@ -1,7 +1,7 @@
 # web-starter
 
 ### Todo
-- [ ] lint-staged, maybe
+- [ ] lint-staged
 - [ ] storybook
 - [x] husky
 - [x] commitlint
@@ -12,14 +12,17 @@
 - [x] vitest
 - [x] testing-library/react
 - [x] router
-- [x] react-query
-- [x] axios / env
-- [ ] redux? recoil?
+- [x] tanstack query
+- [x] axios / env (or switch to got?)
+- [ ] redux (fuck no)? recoil? alium?
 - [x] tailwind
 - [x] daisy ui
 - [ ] react-hook-form/formik
 - [x] react-use (https://streamich.github.io/react-use/)
-- [ ] i18n?
-- [x] layout system?
+- [ ] i18n
+- [ ] animation library (xyz, spring or framer)
+- [x] layout system
 - [ ] github actions (lint and test on pr)
-- [ ] Dockerfile with nginx or something
+- [ ] Dockerfile with nginx
+- [ ] Github actions to quickly deploy to s3 or netlify
+- [ ] !! Remove sass, add postcss plugins for nesting and comments
