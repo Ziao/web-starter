@@ -1,6 +1,9 @@
-# web-starter
+# React Vite starter
+
+
 
 ### Todo
+- [ ] Better readme 😅
 - [ ] lint-staged
 - [ ] storybook
 - [x] husky
