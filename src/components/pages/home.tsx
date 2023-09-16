@@ -34,7 +34,6 @@ export const Home: FC<HomeProps> = () => {
                                 ))}
                             </ul>
                         )}
-                        <hr />
                         <form onSubmit={form.handleSubmit}>
                             <div className="join flex">
                                 <input

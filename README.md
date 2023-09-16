@@ -14,6 +14,7 @@
 - [x] cypress
 - [x] vitest
 - [x] testing-library/react
+- [ ] cypress
 - [x] router
 - [x] tanstack query
 - [x] axios / env (or switch to got?)
