@@ -29,3 +29,4 @@
 - [ ] Dockerfile with nginx
 - [ ] Github actions to quickly deploy to s3 or netlify
 - [ ] !! Remove sass, add postcss plugins for nesting and comments
+- [ ] react forms or simlar
