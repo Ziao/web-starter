@@ -1,19 +1,11 @@
-import { signInWithPopup } from "firebase/auth";
+import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
 import { FC } from "react";
 import "./navbar.scss";
 import { Link } from "react-router-dom";
-import { useAuth, useUser } from "reactfire";
-import { googleProvider } from "../../../lib/app/firebase.ts";
 
 interface NavbarProps {}
 export const Navbar: FC<NavbarProps> = ({}) => {
-    const auth = useAuth();
-    const loginWithGoogle = async () => {
-        const res = await signInWithPopup(auth, googleProvider);
-        console.log(res);
-    };
-
-    const { data: user, status } = useUser();
+    const { login, register, logout, user, isAuthenticated, isLoading } = useKindeAuth();
 
     return (
         <div className="Navbar">
@@ -26,18 +18,34 @@ export const Navbar: FC<NavbarProps> = ({}) => {
                     About
                 </Link>
                 <div className="grow"></div>
-                {status === "loading" && <span>Loading...</span>}
+                {isLoading && <span>Loading...</span>}
 
-                {status !== "loading" && !user && (
-                    <button className="btn btn-outline btn-sm" onClick={loginWithGoogle}>
-                        Log in with Google
-                    </button>
-                )}
-                {status !== "loading" && user && (
+                {/*User profile and picture */}
+                {isAuthenticated && user && (
                     <>
-                        <span>Logged in as {user.displayName}</span>
-                        <button className="btn btn-outline btn-sm" onClick={() => auth.signOut()}>
+                        <div className="flex items-center gap-1">
+                            {user.picture && (
+                                <div className="avatar">
+                                    <div className="w-8 mask mask-squircle">
+                                        <img src={user.picture} alt={user.given_name ?? "Profile picture"} />
+                                    </div>
+                                </div>
+                            )}
+                            <span className="ml-2">{user.given_name}</span>
+                        </div>
+                        <button className="btn btn-outline btn-sm" onClick={() => logout()}>
                             Logout
+                        </button>
+                    </>
+                )}
+
+                {!isAuthenticated && (
+                    <>
+                        <button className="btn btn-outline btn-sm" onClick={() => login({})}>
+                            Login
+                        </button>
+                        <button className="btn btn-outline btn-sm" onClick={() => register({})}>
+                            Register
                         </button>
                     </>
                 )}

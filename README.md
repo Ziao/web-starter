@@ -30,5 +30,5 @@
 - [ ] Github actions to quickly deploy to s3 or netlify
 - [ ] !! Remove sass, add postcss plugins for nesting and comments
 - [x] Formik
-- [x] Auth with firebase
+- [x] Auth with Kinde (feel free to remove)
 - [x] Connection with nest-starter

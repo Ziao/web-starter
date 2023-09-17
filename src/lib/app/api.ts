@@ -1,10 +1,22 @@
-import { Configuration, DefaultApi } from "../../api";
+import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
+import Axios from "axios";
+import { DefaultApi } from "../../api";
 
-export const api = new DefaultApi(
-    new Configuration({
-        basePath: import.meta.env.VITE_API_BASE,
-        baseOptions: {
-            // Todo: interceptors for auth
-        },
-    })
-);
+let token: string | undefined = undefined;
+
+const axios = Axios.create({
+    baseURL: import.meta.env.VITE_API_BASE,
+});
+
+axios.interceptors.request.use(async (config) => {
+    if (token) config.headers.Authorization = `Bearer ${token}`;
+
+    return config;
+});
+
+export const api = new DefaultApi(undefined, import.meta.env.VITE_API_BASE, axios);
+
+export const useApiTokenInterceptor = () => {
+    const { isLoading, getToken } = useKindeAuth();
+    if (!isLoading) getToken().then((t) => (token = t));
+};
