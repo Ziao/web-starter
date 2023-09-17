@@ -1,5 +1,6 @@
 # React Vite starter
 
+This project serves as a starting point for a React project with Vite. It includes a few libraries and tools that I like to use. You are of course free to use this as a template for your own projects, but I make no guarantees that it will work for you. Some things may be quite opinionated.
 
 
 ### Todo
@@ -18,7 +19,7 @@
 - [x] router
 - [x] tanstack query
 - [x] axios / env (or switch to got?)
-- [ ] redux (nah)? recoil? alium?
+- [ ] redux (nah)? recoil? alium? jotai?
 - [x] tailwind
 - [x] daisy ui
 - [x] react-use (https://streamich.github.io/react-use/)
