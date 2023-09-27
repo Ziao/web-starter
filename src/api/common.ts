@@ -12,10 +12,10 @@
  * Do not edit the class manually.
  */
 
-import type { Configuration } from "./configuration";
-import type { RequestArgs } from "./base";
 import type { AxiosInstance, AxiosResponse } from "axios";
+import type { RequestArgs } from "./base";
 import { RequiredError } from "./base";
+import type { Configuration } from "./configuration";
 
 /**
  *
@@ -32,7 +32,7 @@ export const assertParamExists = function (functionName: string, paramName: stri
     if (paramValue === null || paramValue === undefined) {
         throw new RequiredError(
             paramName,
-            `Required parameter ${paramName} was null or undefined when calling ${functionName}.`
+            `Required parameter ${paramName} was null or undefined when calling ${functionName}.`,
         );
     }
 };
@@ -83,7 +83,7 @@ export const setOAuthToObject = async function (
     object: any,
     name: string,
     scopes: string[],
-    configuration?: Configuration
+    configuration?: Configuration,
 ) {
     if (configuration && configuration.accessToken) {
         const localVarAccessTokenValue =
@@ -104,8 +104,8 @@ function setFlattenedQueryParams(urlSearchParams: URLSearchParams, parameter: an
                 setFlattenedQueryParams(
                     urlSearchParams,
                     parameter[currentKey],
-                    `${key}${key !== "" ? "." : ""}${currentKey}`
-                )
+                    `${key}${key !== "" ? "." : ""}${currentKey}`,
+                ),
             );
         }
     } else {
@@ -156,7 +156,7 @@ export const createRequestFunction = function (
     axiosArgs: RequestArgs,
     globalAxios: AxiosInstance,
     BASE_PATH: string,
-    configuration?: Configuration
+    configuration?: Configuration,
 ) {
     return <T = unknown, R = AxiosResponse<T>>(axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
         const axiosRequestArgs = { ...axiosArgs.options, url: (configuration?.basePath || basePath) + axiosArgs.url };

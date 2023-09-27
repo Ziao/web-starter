@@ -12,31 +12,30 @@
  * Do not edit the class manually.
  */
 
-import type { Configuration } from "../configuration";
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from "axios";
+import type { AxiosInstance, AxiosPromise, AxiosRequestConfig } from "axios";
 import globalAxios from "axios";
+// @ts-ignore
+import { BASE_PATH, BaseAPI, COLLECTION_FORMATS, RequestArgs, RequiredError } from "../base";
 // Some imports not used depending on template conditions
 // @ts-ignore
 import {
-    DUMMY_BASE_URL,
     assertParamExists,
+    createRequestFunction,
+    DUMMY_BASE_URL,
+    serializeDataIfNeeded,
     setApiKeyToObject,
     setBasicAuthToObject,
     setBearerAuthToObject,
     setOAuthToObject,
     setSearchParams,
-    serializeDataIfNeeded,
     toPathString,
-    createRequestFunction,
 } from "../common";
+import type { Configuration } from "../configuration";
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from "../base";
 // @ts-ignore
-import { CreateTodoDto } from "../models";
 // @ts-ignore
-import { Todo } from "../models";
-// @ts-ignore
-import { UpdateTodoDto } from "../models";
+import { CreateTodoDto, Todo, UpdateTodoDto } from "../models";
+
 /**
  * DefaultApi - axios parameter creator
  * @export
@@ -84,7 +83,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
          */
         todoControllerCreate: async (
             createTodoDto: CreateTodoDto,
-            options: AxiosRequestConfig = {}
+            options: AxiosRequestConfig = {},
         ): Promise<RequestArgs> => {
             // verify required parameter 'createTodoDto' is not null or undefined
             assertParamExists("todoControllerCreate", "createTodoDto", createTodoDto);
@@ -194,7 +193,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
         todoControllerUpdate: async (
             id: string,
             updateTodoDto: UpdateTodoDto,
-            options: AxiosRequestConfig = {}
+            options: AxiosRequestConfig = {},
         ): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists("todoControllerUpdate", "id", id);
@@ -245,7 +244,7 @@ export const DefaultApiFp = function (configuration?: Configuration) {
          * @throws {RequiredError}
          */
         async appControllerGetHello(
-            options?: AxiosRequestConfig
+            options?: AxiosRequestConfig,
         ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<number>>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.appControllerGetHello(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
@@ -259,7 +258,7 @@ export const DefaultApiFp = function (configuration?: Configuration) {
          */
         async todoControllerCreate(
             createTodoDto: CreateTodoDto,
-            options?: AxiosRequestConfig
+            options?: AxiosRequestConfig,
         ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Todo>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.todoControllerCreate(createTodoDto, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
@@ -273,7 +272,7 @@ export const DefaultApiFp = function (configuration?: Configuration) {
          */
         async todoControllerGet(
             id: string,
-            options?: AxiosRequestConfig
+            options?: AxiosRequestConfig,
         ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Todo>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.todoControllerGet(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
@@ -285,7 +284,7 @@ export const DefaultApiFp = function (configuration?: Configuration) {
          * @throws {RequiredError}
          */
         async todoControllerList(
-            options?: AxiosRequestConfig
+            options?: AxiosRequestConfig,
         ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Todo>>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.todoControllerList(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
@@ -301,7 +300,7 @@ export const DefaultApiFp = function (configuration?: Configuration) {
         async todoControllerUpdate(
             id: string,
             updateTodoDto: UpdateTodoDto,
-            options?: AxiosRequestConfig
+            options?: AxiosRequestConfig,
         ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Todo>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.todoControllerUpdate(id, updateTodoDto, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);

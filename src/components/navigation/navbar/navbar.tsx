@@ -1,6 +1,6 @@
 import { FC } from "react";
-import "./navbar.scss";
 import { Link } from "react-router-dom";
+import "./navbar.scss";
 
 interface NavbarProps {}
 export const Navbar: FC<NavbarProps> = ({}) => {
