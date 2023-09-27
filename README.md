@@ -23,13 +23,15 @@ This project serves as a starting point for a React project with Vite. It includ
 - [x] tailwind
 - [x] daisy ui
 - [x] react-use (https://streamich.github.io/react-use/)
-- [ ] i18n (may be overkill for a starter)
-- [ ] animation library (xyz, spring or framer)
+- [ ] animation library (xyz, spring or framer motion)
 - [x] layout system
 - [ ] github actions (lint and test on pr)
-- [ ] Dockerfile with nginx
 - [ ] Github actions to quickly deploy to s3 or netlify
 - [ ] !! Remove sass, add postcss plugins for nesting and comments
 - [x] Formik
-- [x] Auth with Kinde (feel free to remove)
 - [x] Connection with nest-starter
+
+## Won't do
+- [ ] Auth with Kinde (too specific)
+- [ ] i18n (overkill for a starter)
+- [ ] Dockerfile with nginx (too specific)

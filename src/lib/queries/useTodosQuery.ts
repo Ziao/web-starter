@@ -8,6 +8,6 @@ export const useTodosQuery = () => {
             const res = await api.todoControllerList();
             return res.data;
         },
-        refetchInterval: 1000,
+        // refetchInterval: 1000,
     });
 };
