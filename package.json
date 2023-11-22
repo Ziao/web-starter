@@ -58,6 +58,14 @@
             "@commitlint/config-conventional"
         ]
     },
+    "lint-staged": {
+        "src/**/*.{js,jsx,ts,tsx}": [
+            "yarn lint"
+        ],
+        "src/**/*.{js,jsx,ts,tsx,css}": [
+            "prettier --write"
+        ]
+    },
     "dependencies": {
         "@heroicons/react": "^2.0.18",
         "@tanstack/react-query": "^4.35.3",
@@ -87,6 +95,7 @@
         "eslint-plugin-react-refresh": "^0.4.3",
         "happy-dom": "^12.2.1",
         "husky": "^8.0.3",
+        "lint-staged": "^15.1.0",
         "postcss": "^8.4.30",
         "prettier": "^3.0.3",
         "sass": "^1.68.0",

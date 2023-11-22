@@ -1,8 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-# Technically, if your fixes to the linting errors are not committed, this will pass.
-# Ideally, we'd first stash the changes, run the linting, and then pop the stash, but
-# this may cause other issues.
-# Another approach is confirming that there are no staged changes before running the linting.
-yarn lint
+yarn lint-staged
