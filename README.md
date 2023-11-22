@@ -5,7 +5,7 @@ This project serves as a starting point for a React project with Vite. It includ
 
 ### Todo
 - [ ] Better readme 😅
-- [ ] lint-staged
+- [x] lint-staged
 - [ ] storybook
 - [x] husky
 - [x] commitlint
