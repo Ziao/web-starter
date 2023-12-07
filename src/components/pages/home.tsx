@@ -1,3 +1,4 @@
+import { Box } from "@chakra-ui/react";
 import { useFormik } from "formik";
 import { FC } from "react";
 import { useTitle } from "react-use";
@@ -22,34 +23,38 @@ export const Home: FC<HomeProps> = () => {
 
     return (
         <DefaultLayout>
-            <div className="container grow flex justify-center items-center">
-                <main className="card shadow-2xl shadow-gray-300 bg-white w-96">
-                    <div className="card-body">
-                        <h2 className="card-title">Todo</h2>
-                        {isLoading && <p>Loading...</p>}
-                        {!isLoading && todos && (
-                            <ul>
-                                {todos.map((todo) => (
-                                    <li key={todo.id}>{todo.task}</li>
-                                ))}
-                            </ul>
-                        )}
-                        <form onSubmit={form.handleSubmit}>
-                            <div className="join flex">
-                                <input
-                                    type="text"
-                                    placeholder="Task"
-                                    className="input input-bordered join-item grow"
-                                    {...form.getFieldProps("task")}
-                                />
-                                <button type="submit" className="btn btn-neutral join-item">
-                                    Add
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </main>
-            </div>
+            {/*<div className="container grow flex justify-center items-center">*/}
+            {/*    <main className="card shadow-2xl shadow-gray-300 bg-white w-96">*/}
+            {/*        <div className="card-body">*/}
+            {/*            <h2 className="card-title">Todo</h2>*/}
+            {/*            {isLoading && <p>Loading...</p>}*/}
+            {/*            {!isLoading && todos && (*/}
+            {/*                <ul>*/}
+            {/*                    {todos.map((todo) => (*/}
+            {/*                        <li key={todo.id}>{todo.task}</li>*/}
+            {/*                    ))}*/}
+            {/*                </ul>*/}
+            {/*            )}*/}
+            {/*            <form onSubmit={form.handleSubmit}>*/}
+            {/*                <div className="join flex">*/}
+            {/*                    <input*/}
+            {/*                        type="text"*/}
+            {/*                        placeholder="Task"*/}
+            {/*                        className="input input-bordered join-item grow"*/}
+            {/*                        {...form.getFieldProps("task")}*/}
+            {/*                    />*/}
+            {/*                    <button type="submit" className="btn btn-neutral join-item">*/}
+            {/*                        Add*/}
+            {/*                    </button>*/}
+            {/*                </div>*/}
+            {/*            </form>*/}
+            {/*        </div>*/}
+            {/*    </main>*/}
+            {/*</div>*/}
+
+            <Box bg={"white"} shadow={"sm"} p={8} borderRadius={"md"}>
+                Hi
+            </Box>
         </DefaultLayout>
     );
 };
