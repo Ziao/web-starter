@@ -1,10 +1,22 @@
-import { Box } from "@chakra-ui/react";
-import { useFormik } from "formik";
+import {
+    Box,
+    Button,
+    Divider,
+    FormControl,
+    FormLabel,
+    HStack,
+    Input,
+    ListItem,
+    Stack,
+    Text,
+    UnorderedList,
+} from "@chakra-ui/react";
+import { Field, useFormik } from "formik";
 import { FC } from "react";
 import { useTitle } from "react-use";
 import { useAddTodoMutation } from "../../lib/mutations/addTodoMutation.ts";
 import { useTodosQuery } from "../../lib/queries/useTodosQuery.ts";
-import { DefaultLayout } from "../layouts/defaultLayout.tsx";
+import { ContainerLayout } from "../layouts/ContainerLayout.tsx";
 
 interface HomeProps {}
 export const Home: FC<HomeProps> = () => {
@@ -22,39 +34,40 @@ export const Home: FC<HomeProps> = () => {
     });
 
     return (
-        <DefaultLayout>
-            {/*<div className="container grow flex justify-center items-center">*/}
-            {/*    <main className="card shadow-2xl shadow-gray-300 bg-white w-96">*/}
-            {/*        <div className="card-body">*/}
-            {/*            <h2 className="card-title">Todo</h2>*/}
-            {/*            {isLoading && <p>Loading...</p>}*/}
-            {/*            {!isLoading && todos && (*/}
-            {/*                <ul>*/}
-            {/*                    {todos.map((todo) => (*/}
-            {/*                        <li key={todo.id}>{todo.task}</li>*/}
-            {/*                    ))}*/}
-            {/*                </ul>*/}
-            {/*            )}*/}
-            {/*            <form onSubmit={form.handleSubmit}>*/}
-            {/*                <div className="join flex">*/}
-            {/*                    <input*/}
-            {/*                        type="text"*/}
-            {/*                        placeholder="Task"*/}
-            {/*                        className="input input-bordered join-item grow"*/}
-            {/*                        {...form.getFieldProps("task")}*/}
-            {/*                    />*/}
-            {/*                    <button type="submit" className="btn btn-neutral join-item">*/}
-            {/*                        Add*/}
-            {/*                    </button>*/}
-            {/*                </div>*/}
-            {/*            </form>*/}
-            {/*        </div>*/}
-            {/*    </main>*/}
-            {/*</div>*/}
+        <ContainerLayout>
+            <Stack as={"main"} bg={"white"} shadow={"sm"} p={8} borderRadius={"md"} gap={8}>
+                <Text fontSize={"lg"} fontWeight={"semibold"}>
+                    Todo
+                </Text>
 
-            <Box bg={"white"} shadow={"sm"} p={8} borderRadius={"md"}>
-                Hi
-            </Box>
-        </DefaultLayout>
+                <Divider />
+
+                {isLoading && <p>Loading...</p>}
+                {!isLoading && todos && (
+                    <UnorderedList>
+                        {todos.map((todo) => (
+                            <ListItem key={todo.id}>{todo.task}</ListItem>
+                        ))}
+                    </UnorderedList>
+                )}
+
+                <form onSubmit={form.handleSubmit}>
+                    <FormControl>
+                        <FormLabel>Task</FormLabel>
+                        <HStack>
+                            <Input
+                                type="text"
+                                placeholder="Task"
+                                className="input input-bordered join-item grow"
+                                {...form.getFieldProps("task")}
+                            />
+                            <Button type="submit" colorScheme={"teal"}>
+                                Add
+                            </Button>
+                        </HStack>
+                    </FormControl>
+                </form>
+            </Stack>
+        </ContainerLayout>
     );
 };
