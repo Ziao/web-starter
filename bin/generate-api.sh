@@ -5,7 +5,7 @@ openapi-generator generate \
 --generator-name typescript-axios \
 --output ./src/api \
 -i http://localhost:5000/api-json \
---additional-properties=modelPackage=models,apiPackage=api,withSeparateModelsAndApi=true,supportsES6=true,withInterfaces=true
+--additional-properties=modelPackage=models,apiPackage=api,withSeparateModelsAndApi=true,supportsES6=true,withInterfaces=true,useSingleRequestParameter=true
 
 # Clean up stuff we don't need
 rm -rf ./src/api/.openapi-generator
