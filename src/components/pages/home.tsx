@@ -55,13 +55,8 @@ export const Home: FC<HomeProps> = () => {
                     <FormControl>
                         <FormLabel>Task</FormLabel>
                         <HStack>
-                            <Input
-                                type="text"
-                                placeholder="Task"
-                                className="input input-bordered join-item grow"
-                                {...form.getFieldProps("task")}
-                            />
-                            <Button type="submit" colorScheme={"teal"}>
+                            <Input type="text" placeholder="Task" {...form.getFieldProps("task")} />
+                            <Button type="submit" colorScheme={"primary"}>
                                 Add
                             </Button>
                         </HStack>

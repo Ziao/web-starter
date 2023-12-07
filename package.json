@@ -12,9 +12,10 @@
         "e2e": "cypress open --e2e --browser chrome",
         "e2e:run": "cypress run",
         "preview": "vite preview",
+        "tokens": "chakra-cli tokens src/lib/app/theme.ts",
         "format": "prettier --write \"src/**/*.{ts,tsx,css,scss,json}\" \"index.html\"",
         "format:check": "prettier --check \"src/**/*.{ts,tsx,css,scss,json}\" \"index.html\"",
-        "prepare": "husky install",
+        "prepare": "husky install && npm run tokens",
         "release:patch": "standard-version -r patch",
         "release:minor": "standard-version -r minor",
         "release:major": "standard-version -r major"
@@ -83,6 +84,7 @@
         "react-use": "^17.4.0"
     },
     "devDependencies": {
+        "@chakra-ui/cli": "^2.4.1",
         "@commitlint/cli": "^17.7.1",
         "@commitlint/config-conventional": "^17.7.0",
         "@openapitools/openapi-generator-cli": "^2.7.0",
