@@ -2,14 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "components";
-
 body {
     @apply bg-gray-200;
 }
 
 #root {
-    // Probably worth keeping
+    /*Probably worth keeping*/
     @apply min-h-screen;
     @apply flex flex-col items-stretch;
 }
