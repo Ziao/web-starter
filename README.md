@@ -19,20 +19,20 @@ This project serves as a starting point for a React project with Vite. It includ
 - [x] router
 - [x] tanstack query
 - [x] axios / env (or switch to got?)
-- [ ] jotai or signals (has a vite plugin for hmr)
+- [ ] jotai (has a vite plugin for hmr) or signals
 - [x] tailwind
 - [x] daisy ui
 - [x] react-use (https://streamich.github.io/react-use/)
 - [ ] animation library (framer motion)
 - [x] layout system -> use child routes to ensure the navbar doesn't get replaced
-- [ ] github actions (lint and test on pr)
-- [ ] Github actions to quickly deploy to s3 or netlify
+- [ ] github actions (lint and test on pr, coverage, deploy to bucket or netlify)
 - [x] Remove sass, tailwind has a nesting plugin
 - [x] Formik
 - [x] Connection with nest-starter
 - [x] Openapi generator 
 - [ ] css modules
-- 
+- [ ] lint-staged needs to run on pre-commit, not pre-push as there will not be anything staged on a push  
+
 ## Won't do
 - [ ] Auth with Kinde (too specific)
 - [ ] i18n (overkill for a starter)
