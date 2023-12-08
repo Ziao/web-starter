@@ -23,10 +23,10 @@ export const theme = extendTheme({
         },
     },
     components: {
-        // Button: {
-        //     baseStyle: {
-        //         borderRadius: "full",
-        //     },
-        // },
+        Container: {
+            baseStyle: {
+                maxW: "container.xl",
+            },
+        },
     },
 });

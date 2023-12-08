@@ -6,7 +6,7 @@ interface NavbarProps {}
 export const Navbar: FC<NavbarProps> = ({}) => {
     return (
         <Box background={"white"} pos={"sticky"} top={0} zIndex={20} shadow={"sm"}>
-            <Container maxW={"container.xl"}>
+            <Container>
                 <HStack height={16}>
                     <Text fontWeight={"bold"} mr={4}>
                         Web starter
